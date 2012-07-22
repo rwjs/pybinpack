@@ -3,4 +3,3 @@
 
 class DoesNotFitWarning(Warning):
     pass
-
