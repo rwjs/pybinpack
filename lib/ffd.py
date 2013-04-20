@@ -4,7 +4,7 @@
 from __init__ import *
 
 def pack(*items, **kwargs):
-    """ First-Fit Decreasing bin-packing heuristic.
+    """ First-Fit Decreasing bin-packing heuristic. Offline, 1-dimension.
     
     The items are sorted into 'decreasing' order (largest->smallest), then they
     are packed into the first bins that fit them. """
@@ -12,6 +12,7 @@ def pack(*items, **kwargs):
     key = kwargs.get('key', lambda x:x)
     binsize = kwargs.get('binsize', 800)
     bins = kwargs.get('bins', [[]])
+    flush = kwargs.get('flush', True)
     
     items = sorted(items, key=key, reverse=True) # largest -> smallest
 
@@ -34,5 +35,6 @@ def pack(*items, **kwargs):
             bins.append([item])
         continue
 
-    for b in bins:
-        yield b
+    if flush:
+        for b in bins:
+            yield b

@@ -4,7 +4,7 @@
 from __init__ import *
 
 def pack(*items, **kwargs):
-    """ Almost Worst-Fit.
+    """ Almost Worst-Fit. Offline, 1-dimension.
 
     The items are packed into the second-emptiest bin. Some sources indicate
     that this heuristic is provably better than Worst Fit, but I have thus far
