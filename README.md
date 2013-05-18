@@ -14,8 +14,7 @@ Multi-dimension Bin-Packing Logic
     2. By the length of the length of 'binsize' if no kwarg supplied (specifically binsize.__len__), or 
     3. Defaulting to 1 if binsize is not iterable and no kwarg supplied.
  * All multi-dimension iterable-wrapping logic is only required if the number of dimensions exceeds one. If it does not; items, keys and binsizes will be examined as they are.
- * Items with too few dimensions raise `TooFewDimensions`. Excess dimensions are simply ignored.
-
+ * Items with too few dimensions **yields** `TooFewDimensions`. Excess dimensions are simply ignored.
 
 TODO
 ====

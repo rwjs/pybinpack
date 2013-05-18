@@ -1,10 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
+
 class DoesNotFitWarning(Warning):
     pass
 
 class TooFewDimensions(Warning):
+    pass
+
+class GoTo(Warning):
     pass
 
 class PersistentGenerator(object):
@@ -25,7 +30,7 @@ class PersistentGenerator(object):
         return self
 
     def next(self):
-        self.bins.sort()
+        self.bins.sort(self.key)
         if self.bins:
             return self.bins.pop(0)
         else:

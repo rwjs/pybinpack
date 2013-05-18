@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from __init__ import *
+from common import *
 
 def pack(*items, **kwargs):
     """ First-Fit Decreasing bin-packing heuristic. Offline, 1-dimension.

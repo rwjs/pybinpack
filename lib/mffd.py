@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import division
+from common import *
+
 if __name__ == "__main__":
     from ..__init__ import *
 import ffd
