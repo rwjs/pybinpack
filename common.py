@@ -5,6 +5,14 @@ import sys
 
 # File for storing code and data common to the whole project.
 
+def dimensioner(item, dim):
+    try:
+        return item[dim]
+    except (TypeError, IndexError):
+        if dim > 0:
+            return TooFewDimensions
+        return item
+
 class DoesNotFitWarning(Warning):
     pass
 
@@ -41,4 +49,3 @@ class PersistentGenerator(object):
     def __call__(self, *items):
         self.bins += items
         return self
-
